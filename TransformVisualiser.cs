@@ -12,7 +12,7 @@ namespace tools
     public class TransformVisualiser : MonoBehaviour
     {
         [Tooltip("The number of individual lines drawn per parent-child.")]
-        [SerializeField] [Range(3, 100)] private int vertexCount = 30;
+        [SerializeField] [Range(3, 100)] int vertexCount = 30;
         [Tooltip("Can lines be seen through nearby rendered objects.")]
         [SerializeField] bool alwaysVisible = true;
         [Tooltip("The size of the visualisation cone.")]
@@ -23,26 +23,26 @@ namespace tools
         List<Color> transformColor = new List<Color>();
 
 
-        private void Start()
+        void Start()
         {
             transformColor.Add(Color.blue);
             transformColor.Add(Color.cyan);
         }
 
 
-        private void OnEnable() 
+        void OnEnable() 
         {
             Start();
         }
 
 
-        private void Update()
+        void Update()
         {
             DrawChildren(transform, 0);
         }
 
 
-        private void DrawChildren(Transform parent, int colorID)
+        void DrawChildren(Transform parent, int colorID)
         {
             int nextColorID = (int) Mathf.Pow(0, colorID);
             foreach (Transform child in parent)
@@ -53,7 +53,7 @@ namespace tools
         }
 
 
-        private void DrawLines(Vector3 startPos, Vector3 endPos, Color lineColor)
+        void DrawLines(Vector3 startPos, Vector3 endPos, Color lineColor)
         {
             Vector3 lookingAt = endPos - startPos;
             Vector3 k = lookingAt.normalized;
