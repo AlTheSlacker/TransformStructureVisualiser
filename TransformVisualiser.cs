@@ -5,7 +5,7 @@ using UnityEditor;
 
 #if UNITY_EDITOR
 
-namespace gpcc
+namespace tools
 {
     [ExecuteInEditMode]
     
