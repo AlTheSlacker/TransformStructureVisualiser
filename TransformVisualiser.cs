@@ -20,7 +20,7 @@ namespace tools
         [Tooltip("Should longer connections appear larger.")]
         [SerializeField] bool radiusFunctionOfLength = false;
 
-        List<Color> transformColor = new List<Color>();
+        readonly List<Color> transformColor = new List<Color>();
 
 
         void Start()
